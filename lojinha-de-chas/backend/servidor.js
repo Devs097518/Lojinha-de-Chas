@@ -43,15 +43,21 @@ app.post('/post' , async (req,res) => {
 });
 
 
-app.get('/acessar' , async (req,res) => {
-    try{
-        const totalItens = await itensSchema.find()
-        res.json(totalItens)
+// app.get('/acessar' , async (req,res) => {
+//     try{
+//         const totalItens = await itensSchema.find()
+//         res.json(totalItens)
 
-    }
-    catch(error){
-        console.log('Erro ao usar o read',error)
-    }
+//     }
+//     catch(error){
+//         console.log('Erro ao usar o read',error)
+//     }
+// });
+
+
+app.get('/acessar/:identificador' , async (req,res) => {
+        const totalItens = await itensSchema.findOne({identificador: req.params.identificador});
+        totalItens ? res.json(totalItens) : res.status(404).json({error:'Item não encontrado'})
 });
 
 
@@ -72,14 +78,32 @@ app.get('/acessar' , async (req,res) => {
 // });
 
 
-app.put('/post/:id/adicionar' , async (req,res) => {
+
+app.put('/post/:identificador/adicionar' , async (req,res) => {
     try{
-        const atualizar = await itensSchema.findByIdAndUpdate(
-            req.params.id ,
+        const atualizar = await itensSchema.findOneAndUpdate(
+            {identificador : req.params.identificador} ,
             { $push: {sacola : req.body}} ,
             {new:true}
         );
         res.json(atualizar);
+        console.log('colocado com sucesso!!!');
+    }
+    catch(error){
+        console.log('Erro ao usar o read',error)
+    }
+});
+
+
+app.put('/post/:identificador/esvaziar' , async (req,res) => {
+    try{
+        const atualizar = await itensSchema.findOneAndUpdate(
+            {identificador : req.params.identificador} ,
+            { $set: {sacola : []}} ,
+            {new:true}
+        );
+        res.json(atualizar);
+        console.log('colocado com sucesso!!!');
     }
     catch(error){
         console.log('Erro ao usar o read',error)
@@ -88,14 +112,10 @@ app.put('/post/:id/adicionar' , async (req,res) => {
 
 
 
-app.delete('/post/:id' , async (req,res) => {
+app.delete('/post/:identificador' , async (req,res) => {
     try{
-        const deletar = await itensSchema.findByIdAndDelete(
-            req.params.id
-            );
-
+        const deletar = await itensSchema.findOneAndDelete({identificador : req.params.identificador});
         res.json(deletar);
-
     }
     catch(error){
         console.log('Erro ao usar o read',error)
