@@ -10,8 +10,9 @@
         </nav>
         
         <article>
-
+            <p>aqui fica a lista de produtos</p>
         </article>
+
         <footer>
             <Contatos />
         </footer>

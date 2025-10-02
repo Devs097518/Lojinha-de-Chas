@@ -10,8 +10,9 @@
         </nav>
         
         <article>
-
+            <p>aqui fica a sua sacola</p>
         </article>
+
         <footer>
             <Contatos />
         </footer>
