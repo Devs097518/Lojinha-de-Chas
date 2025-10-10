@@ -37,16 +37,38 @@
     }
 
     #imagem {
-        width: 300px;
-        height: 300px;
+        width: 200px;
+        min-height: 200px;
         background-size: cover;
         padding: 2em;
+        border: 1px solid black;
     }
 
     #info {
-        width: 300px;
-        height: 300px;
-        background-color: rgb(230, 134, 134);
+        width: 600px;
+        min-height: 200px;
+        background-color: rgb(231, 228, 189);
         padding: 2em;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        border-right: 1px solid black;
+    }
+
+    p{
+        font-family: "Google Sans Code", monospace;
+        font-size: 13px;
+    }
+
+    h3{
+        font-size: 2em;
+        font-family: "Lora", serif;
+        color: rgb(0, 0, 0);
+        font-weight: 100;
+    }
+
+    h2{
+         font-family: "Lora", serif;
+         font-weight: 300;
+         
     }
 </style>

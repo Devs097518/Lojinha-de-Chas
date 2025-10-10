@@ -233,7 +233,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: rgb(143, 189, 112);
+        background-color: rgb(220, 228, 188);
 
         border-left: 1px black solid;
         border-right: 1px black solid;

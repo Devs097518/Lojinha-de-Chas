@@ -22,28 +22,35 @@
         let dadosSoltos = await fetch(
             `http://localhost:3000/acessar/${$userCode}`,
         );
+
         let dadosAgrupados = await dadosSoltos.json();
         resultado = dadosAgrupados;
         $userInfo.push(dadosAgrupados);
     }
 
     async function esvaziar() {
-        try {
-            console.log("entrei dentro");
-
-            let dadosSoltos = await fetch(
-                `http://localhost:3000/post/${$userCode}/esvaziar`,
-                {
-                    method: "PUT",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                },
+        if ($userCode == "" || $sacola.length == 0) {
+            alert(
+                "Entre em sua conta e adicione um produto antes de fazer o pedido!",
             );
+        } else {
+            try {
+                console.log("entrei dentro");
 
-            read();
-        } catch (error) {
-            console.log("erro ao acessar os dados", error);
+                let dadosSoltos = await fetch(
+                    `http://localhost:3000/post/${$userCode}/esvaziar`,
+                    {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                    },
+                );
+
+                read();
+            } catch (error) {
+                console.log("erro ao acessar os dados", error);
+            }
         }
     }
 
@@ -61,21 +68,24 @@
         </nav>
 
         <article>
-            <p>aqui fica a sua sacola</p>
+            <div id="divSacola">
+                <h1>Minha Sacola</h1>
 
-            {#each $sacola as item}
-                <Produto
-                    nome={item.nome || "sem nome"}
-                    descricao={item.descricao || "sem descrição"}
-                    propriedades={item.propriedades || []}
-                    imagem={item.imagem || "https://via.placeholder.com/150"}
-                    valor={item.valor || 0}
-                />
-            {/each}
+                {#each $sacola as item}
+                    <Produto
+                        nome={item.nome || "sem nome"}
+                        descricao={item.descricao || "sem descrição"}
+                        propriedades={item.propriedades || []}
+                        imagem={item.imagem ||
+                            "https://via.placeholder.com/150"}
+                        valor={item.valor || 0}
+                    />
+                {/each}
 
-            <p id="totalInfo">o total de sua compra é de R${total},00</p>
+                <p id="totalInfo">o total de sua compra é de R${total},00</p>
 
-            <button on:click={esvaziar}>fazer pedido</button>
+                <button on:click={esvaziar}>fazer pedido</button>
+            </div>
         </article>
 
         <footer>
@@ -90,6 +100,11 @@
         justify-content: center;
     }
 
+    h1{
+        font-family: "Lora", serif;
+        font-weight: 100;
+    }
+
     #conteudo {
         width: 100%;
         min-height: 50vh;
@@ -101,12 +116,23 @@
         flex-direction: column;
         align-items: center;
         min-height: 85vh;
-        background-color: rgb(143, 189, 112);
+        background-color: rgb(220, 228, 188);
         border-left: 1px black solid;
         border-right: 1px black solid;
     }
 
-    #totalInfo{
+    #totalInfo {
         font-size: 2em;
+        font-family: "Lora", serif;
+        font-weight: 100;
+    }
+
+    #divSacola {
+        min-width: 70%;
+        min-height: 78vh;
+        background-color: rgba(250, 247, 212, 0.699);
+        padding: 3em;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
     }
 </style>

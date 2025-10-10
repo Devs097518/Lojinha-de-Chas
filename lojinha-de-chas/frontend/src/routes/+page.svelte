@@ -31,8 +31,8 @@
     }
 
     article{
-        min-height: 30vh;
-        background-color: rgb(143, 189, 112);
+        min-height: 80vh;
+        background-color: rgb(220, 228, 188);
         border-left: 1px black solid;
         border-right: 1px black solid;
     }

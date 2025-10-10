@@ -20,7 +20,7 @@
             nome: "Maçã",
             descricao:
                 "descrição e tal da maçã que a gente olha, bate o olho e já consegue localizar a descrição daquele produto saca?",
-            propriedades: ["propriedade 1\n", "propriedade 2\n", "propriedade 3\n"],
+            propriedades: ["propriedade 1 ", "propriedade 2 ", "propriedade 3 "],
             imagem: "sacola.jpeg",
             valor: 3,
         },
@@ -28,9 +28,17 @@
             nome: "Morango",
             descricao:
                 "descrição e tal do morango que a gente olha, bate o olho e já consegue localizar a descrição daquele produto saca?",
-            propriedades: ["propriedade 1", "propriedade 2", "propriedade 3"],
+            propriedades: ["propriedade 1 ", "propriedade 2 ", "propriedade 3 "],
             imagem: "sacola.jpeg",
             valor: 5,
+        },
+        {
+            nome: "Erva Doce",
+            descricao:
+                "descrição e tal da erva doce que a gente olha, bate o olho e já consegue localizar a descrição daquele produto saca?",
+            propriedades: ["propriedade 1 ", "propriedade 2 ", "propriedade 3 "],
+            imagem: "sacola.jpeg",
+            valor: 7,
         },
     ];
 
@@ -97,7 +105,7 @@
         </nav>
 
         <article>
-            <p>aqui fica a lista de produtos</p>
+            <h1>- PRODUTOS -</h1>
 
             
             <Produto 
@@ -108,7 +116,7 @@
             valor={itens[2].valor || 0}
              />
             <button class="botaoAdicionar" on:click={() => adicionarItem(2)}
-                >Adicionar</button
+                >Adicionar na sacola</button
             >
 
             <Produto 
@@ -119,7 +127,18 @@
             valor={itens[1].valor || 0}
              />
             <button class="botaoAdicionar" on:click={() => adicionarItem(1)}
-                >Adicionar</button
+                >Adicionar na sacola</button
+            >
+
+            <Produto 
+            nome={itens[3].nome || "sem nome"}
+            descricao={itens[3].descricao || "sem descrição"}
+            propriedades={itens[3].propriedades || []}
+            imagem={itens[3].imagem || "https://via.placeholder.com/150"}
+            valor={itens[3].valor || 0}
+             />
+            <button class="botaoAdicionar" on:click={() => adicionarItem(3)}
+                >Adicionar na sacola</button
             >
 
         </article>
@@ -131,6 +150,13 @@
 </div>
 
 <style>
+    
+
+    h1{
+        font-family: "Lora", serif;
+        font-weight: 300;
+    }
+
     #pagina {
         display: flex;
         justify-content: center;
@@ -152,18 +178,21 @@
         flex-direction: column;
 
         min-height: 30vh;
-        background-color: rgb(143, 189, 112);
+        background-color: rgb(220, 228, 188);
         border-left: 1px black solid;
         border-right: 1px black solid;
     }
 
     .botaoAdicionar{
         padding: 1em;
-        margin-bottom: 2em;
-        width: 704px;
+        margin-bottom: 3em;
+        width: 907px;
         font-size: 1em;
-        background-color: rgb(218, 230, 218);
-        border: none;
+        background-color: rgb(255, 255, 255);
+        border-bottom: 1px solid black;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        border-top: 0px ;
         cursor: pointer;
     }
 </style>
