@@ -5,8 +5,11 @@ const itensSchema = new mongoose.Schema({
     nome:String,
     descricao:String,
     sacola: [
-        {
-            produto:String,
+        {   
+            nome:String,
+            imagem:String,
+            propriedades:String,
+            descricao:String,
             valor:Number
         }
     ]
