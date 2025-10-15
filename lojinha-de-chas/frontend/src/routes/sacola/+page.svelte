@@ -69,7 +69,7 @@
 
         <article>
             <div id="divSacola">
-                <h1>Minha Sacola</h1>
+                <h1>- MINHA SACOLA -</h1>
 
                 {#each $sacola as item}
                     <Produto
@@ -82,9 +82,16 @@
                     />
                 {/each}
 
-                <p id="totalInfo">o total de sua compra é de R${total},00</p>
-
-                <button on:click={esvaziar}>fazer pedido</button>
+  
+                    {#if $sacola.length == 0}
+                    <p class="totalInfo">Adicione algum item à sua sacola!</p>
+                    {/if}
+ 
+                    {#if $sacola.length > 0}
+                    <p class="totalInfo">o total de sua compra é de R${total},00</p>
+                    <button id="botaoPedido" on:click={esvaziar}>fazer pedido</button>
+                    {/if}
+                
             </div>
         </article>
 
@@ -100,7 +107,7 @@
         justify-content: center;
     }
 
-    h1{
+    h1 {
         font-family: "Lora", serif;
         font-weight: 100;
     }
@@ -121,18 +128,26 @@
         border-right: 1px black solid;
     }
 
-    #totalInfo {
+    .totalInfo {
         font-size: 2em;
-        font-family: "Lora", serif;
+        font-family: "Arial", sans-serif;
         font-weight: 100;
     }
 
     #divSacola {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         min-width: 70%;
-        min-height: 78vh;
+        min-height: 85vh;
         background-color: rgba(250, 247, 212, 0.699);
-        padding: 3em;
-        border-left: 1px solid black;
-        border-right: 1px solid black;
+    }
+
+    #botaoPedido {
+        background-color: white;
+        border: 1px solid black;
+        font-size: 20px;
+        padding: 10px 20px;
+        margin-bottom: 2em;
     }
 </style>

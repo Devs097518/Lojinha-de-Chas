@@ -127,8 +127,8 @@
         </nav>
 
         <article>
-            <div id="conta" style="display:{conta};">
-                <h1 style="color:rgb(49, 49, 49)">entrar</h1>
+            <div class="caixa" style="display:{conta};">
+                <h1 style="color:rgb(49, 49, 49)">ENTRAR</h1>
                 <button class="botao" on:click={() => trocarTela("acessar")}
                     >Acessar conta</button
                 >
@@ -137,8 +137,8 @@
                 >
             </div>
 
-            <div id="criar" style="display:{gerar};">
-                <h1>Criar Conta</h1>
+            <div class="caixa" style="display:{gerar};">
+                <h1>CRIAR CONTA</h1>
 
                 <table>
                     <thead>
@@ -175,10 +175,10 @@
                 </span>
             </div>
 
-            <div id="acessar" style="display:{acessar};">
-                <h1>Acessar Conta</h1>
+            <div class="caixa" style="display:{acessar};">
+                <h1>ACESSAR CONTA</h1>
 
-                <div style="display:flex">
+                <div style="display:flex ; height:60px ">
                     <input id="inputAcesso" type="text" bind:value={$userCode} />
                     <br />
                     <button id="buttonAcesso" on:click={read}> entrar </button>
@@ -187,9 +187,9 @@
                 <br />
             </div>
 
-            <div id="dados" style="display:{dados};">
+            <div class="caixa" style="display:{dados};">
                 <hr />
-                <h1>Informações Pessoais</h1>
+                <h1>INFORMAÇÔES PESSOAIS</h1>
 
                 <table>
                     <thead>
@@ -239,17 +239,19 @@
         border-right: 1px black solid;
     }
 
-    #conta {
+    .caixa {
         display: flex;
         align-items: center;
         border: 1px solid rgb(92, 92, 92);
         flex-direction: column;
+        justify-content: center;
         background-color: rgba(255, 255, 255, 0.904);
-        border-radius: 5em;
-        padding: 10em;
+        width: 600px;
+        height: 400px;
     }
 
-    #criar {
+
+    /* #criar {
         display: none;
         align-items: center;
         flex-direction: column;
@@ -265,26 +267,29 @@
         display: none;
         align-items: center;
         flex-direction: column;
-    }
+    } */
+
+
     table,
     tr,
     td {
         background-color: white;
         border: 1px solid rgb(110, 110, 110);
-        padding: 0.5em 2em;
+        padding: 0.1em 2em;
         font-family: monospace;
-        font-size: 30px;
+        font-size: 20px;
     }
 
     table {
-        margin-bottom: 2em;
+        margin-bottom: 1em;
         border-radius: 0.8em;
     }
 
     h1 {
         font-size: 40px;
-        font-family: monospace;
-        color: rgb(255, 255, 255);
+        font-family: "Lora", serif;
+        font-weight: 200;
+        color: rgb(0, 0, 0);
     }
 
     .botao {
@@ -302,11 +307,11 @@
         font-size: 1.4em;
         padding: 0.8em;
         border-radius: 10px 0 0 10px;
-        border: 0;
+        border: 1px solid black;
     }
 
     span {
-        margin-top: 2em;
+        /* margin-top: 2em; */
         font-family: monospace;
         font-size: 15px;
         text-align: center;
@@ -317,7 +322,7 @@
         padding: 0.8em;
         display: flex;
         border-radius: 0 10px 10px 0;
-        border: 0;
+        border: 1px solid black;
         border-left: 2px solid rgb(212, 212, 212);
         color: rgb(3, 3, 3);
     }
