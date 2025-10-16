@@ -229,11 +229,13 @@
     }
 
     article {
-        min-height: 80vh;
+        min-height: 90vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: rgb(220, 228, 188);
+        /* background-color: rgb(255, 244, 179); */
+        background-image: url(paisagem2.jpg);
+        background-size: cover;
 
         border-left: 1px black solid;
         border-right: 1px black solid;
@@ -245,7 +247,7 @@
         border: 1px solid rgb(92, 92, 92);
         flex-direction: column;
         justify-content: center;
-        background-color: rgba(255, 255, 255, 0.904);
+        background-color: rgb(255, 255, 255);
         width: 600px;
         height: 400px;
     }
@@ -274,15 +276,15 @@
     tr,
     td {
         background-color: white;
-        border: 1px solid rgb(110, 110, 110);
+        /* border: 1px solid rgb(110, 110, 110); */
         padding: 0.1em 2em;
         font-family: monospace;
         font-size: 20px;
+        padding: 10px;
     }
 
     table {
         margin-bottom: 1em;
-        border-radius: 0.8em;
     }
 
     h1 {
@@ -308,6 +310,7 @@
         padding: 0.8em;
         border-radius: 10px 0 0 10px;
         border: 1px solid black;
+        
     }
 
     span {
@@ -333,5 +336,6 @@
         padding: 0;
         font-size: 1em;
         border: 0;
+        border: 1px solid black;
     }
 </style>

@@ -42,12 +42,14 @@
         background-size: cover;
         padding: 2em;
         border: 1px solid black;
+        
     }
 
     #info {
         width: 600px;
-        min-height: 200px;
-        background-color: rgb(255, 250, 176);
+        min-height: 100px;
+
+        background-color: rgb(255, 253, 164);
         padding: 2em;
         border-top: 1px solid black;
         border-bottom: 1px solid black;
@@ -64,11 +66,12 @@
         font-family: "Lora", serif;
         color: rgb(0, 0, 0);
         font-weight: 100;
+        margin: 0;
     }
 
     h2{
          font-family: "Lora", serif;
          font-weight: 300;
-         
+         margin: 0;
     }
 </style>

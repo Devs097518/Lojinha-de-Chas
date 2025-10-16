@@ -12,9 +12,8 @@
 
 <style>
     nav{
-        font-family: monospace;
+        font-family: "Lora", serif;
         display: flex;
-        border-radius: 10px 10px 0 0;
         height: 40px;
         align-items: center;
         justify-content: space-around;

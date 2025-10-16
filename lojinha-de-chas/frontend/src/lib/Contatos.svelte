@@ -1,6 +1,5 @@
 <div class="Contatos">
-    <a href="/"> GITHUB </a>
-    <a href="/"> EMAIL </a>
+    <a href="https://github.com/Devs097518" target="_blank"> GITHUB </a>
 </div>
 
 <style>
@@ -10,14 +9,12 @@
         border: 1px solid black;
         min-height: 40px;
         align-items: center;
-        border-radius: 0 0 10px 10px;
     }
 
     a {
         text-decoration: none;
         color: black;
-        font-family: monospace;
-
+        font-family: "Lora", serif;
         text-align: center;
     }
 </style>

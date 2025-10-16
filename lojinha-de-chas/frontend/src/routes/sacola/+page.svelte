@@ -103,14 +103,18 @@
 </div>
 
 <style>
+
     #pagina {
         display: flex;
         justify-content: center;
+        
     }
 
     h1 {
         font-family: "Lora", serif;
         font-weight: 100;
+        margin-top: 1em;
+        color: rgb(255, 255, 255);
     }
 
     #conteudo {
@@ -123,8 +127,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        min-height: 85vh;
-        background-color: rgb(220, 228, 188);
+        min-height: 90vh;
+        /* background-color:rgb(255, 244, 179); */
+        background-image: url(paisagem2.jpg);
+        background-size: cover;
         border-left: 1px black solid;
         border-right: 1px black solid;
     }
@@ -133,15 +139,20 @@
         font-size: 2em;
         font-family: "Arial", sans-serif;
         font-weight: 100;
+        color: rgb(255, 255, 255);
     }
 
     #divSacola {
         display: flex;
         flex-direction: column;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
         align-items: center;
         min-width: 70%;
-        min-height: 85vh;
-        background-color: rgba(250, 247, 212, 0.699);
+        min-height: 90vh;
+        background-color: rgba(47, 77, 88, 0.89);
+        padding-right: 2em;
+        padding-left: 2em;
     }
 
     #botaoPedido {
