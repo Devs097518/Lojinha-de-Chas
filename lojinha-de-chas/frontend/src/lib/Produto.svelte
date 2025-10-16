@@ -47,7 +47,7 @@
     #info {
         width: 600px;
         min-height: 200px;
-        background-color: rgb(231, 228, 189);
+        background-color: rgb(255, 250, 176);
         padding: 2em;
         border-top: 1px solid black;
         border-bottom: 1px solid black;

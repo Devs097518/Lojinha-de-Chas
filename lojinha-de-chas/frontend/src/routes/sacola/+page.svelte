@@ -48,6 +48,7 @@
                 );
 
                 read();
+                alert('O seu pedido foi feito com sucesso! Estaremos fazendo a entrega do seu pedido no endereço informado.')
             } catch (error) {
                 console.log("erro ao acessar os dados", error);
             }
