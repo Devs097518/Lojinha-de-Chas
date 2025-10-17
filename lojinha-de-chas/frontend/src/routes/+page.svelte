@@ -133,7 +133,7 @@
 
 
     #imagem2{
-        background-image: url(variedades.jpg);
+        background-image: url(variedades.png);
     }
     #info2{
         background-color: rgb(66, 109, 37);
