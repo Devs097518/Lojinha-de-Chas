@@ -114,7 +114,7 @@
 
     async function read() {
         let dadosSoltos = await fetch(
-            `http://localhost:3000/acessar/${$userCode}`,
+            `https://lojinha-de-chas.onrender.com/acessar/${$userCode}`,
         );
         let dadosAgrupados = await dadosSoltos.json();
         resultado = dadosAgrupados;
@@ -125,7 +125,7 @@
     async function adicionar() {
         try {
             let dadosSoltos = await fetch(
-                `http://localhost:3000/post/${$userCode}/adicionar`,
+                `https://lojinha-de-chas.onrender.com/post/${$userCode}/adicionar`,
                 {
                     method: "PUT",
                     headers: {

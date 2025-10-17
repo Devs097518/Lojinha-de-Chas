@@ -41,15 +41,7 @@
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    // body: JSON.stringify({
-                    //     identificador: `${idCriado}`,
-                    //     nome: `${nome}`,
-                    //     descricao: `${endereco}`,
-                    //     sacola: {
-                    //         produto: `${itens[0].produto}`,
-                    //         valor: `${itens[0].valor}`,
-                    //     },
-                    // }),
+   
                     body: JSON.stringify({
                         identificador: idCriado,
                         nome,
@@ -64,21 +56,6 @@
             alert("preencha os campos para criar sua conta");
         }
     }
-
-    /*
-    
-    async function read() {
-                let dadosSoltos = await fetch(
-                    `http://localhost:3000/acessar/${$userCode}`,
-                );
-                let dadosAgrupados = await dadosSoltos.json();
-                    resultado = dadosAgrupados;
-                    $userInfo.push(dadosAgrupados);
-                }
-    }
-    
-    */
-
 
 
 
@@ -96,9 +73,6 @@
                 } else {
                     resultado = dadosAgrupados;
                     $userInfo.push(dadosAgrupados);
-
-                    // console.log(dadosAgrupados);
-                    // console.log($userCode)
                     trocarTela("dados");
                 }
 
