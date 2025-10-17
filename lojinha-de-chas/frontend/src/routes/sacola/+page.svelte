@@ -20,7 +20,7 @@
 
     async function read() {
         let dadosSoltos = await fetch(
-            `http://localhost:3000/acessar/${$userCode}`,
+            `https://lojinha-de-chas.onrender.com/acessar/${$userCode}`,
         );
 
         let dadosAgrupados = await dadosSoltos.json();
@@ -38,7 +38,7 @@
                 console.log("entrei dentro");
 
                 let dadosSoltos = await fetch(
-                    `http://localhost:3000/post/${$userCode}/esvaziar`,
+                    `https://lojinha-de-chas.onrender.com/post/${$userCode}/esvaziar`,
                     {
                         method: "PUT",
                         headers: {
@@ -129,7 +129,7 @@
         align-items: center;
         min-height: 90vh;
         /* background-color:rgb(255, 244, 179); */
-        background-image: url(paisagem2.jpg);
+        background-image: url(/paisagem2.jpg);
         background-size: cover;
         border-left: 1px black solid;
         border-right: 1px black solid;

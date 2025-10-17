@@ -125,7 +125,7 @@
     }
 
     #imagem1{
-        background-image: url(relaxamento.jpg);
+        background-image: url(/relaxamento.jpg);
     }
     #info1{
         background-color: rgb(247, 237, 228);
@@ -142,7 +142,7 @@
 
 
     #imagem3{
-        background-image: url(compra.jpg);
+        background-image: url(/compra.jpg);
     }
     #info3{
         background-color: rgb(109, 72, 37);
@@ -151,7 +151,7 @@
 
 
     #imagem4{
-        background-image: url(infusão.jpg);
+        background-image: url(/infusão.jpg);
     }
     #info4{
         background-color: rgb(139, 197, 192);

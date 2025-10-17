@@ -36,7 +36,7 @@
                 $userCode = idCriado;
 
                 console.log("postado com sucesso!", idCriado);
-                let dadosSoltos = await fetch("http://localhost:3000/post", {
+                let dadosSoltos = await fetch("https://lojinha-de-chas.onrender.com/post", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -86,7 +86,7 @@
         if ($userCode != '') {
             try {
                 let dadosSoltos = await fetch(
-                    `http://localhost:3000/acessar/${$userCode}`,
+                    `https://lojinha-de-chas.onrender.com/acessar/${$userCode}`,
                 );
                 let dadosAgrupados = await dadosSoltos.json();
 
@@ -234,7 +234,7 @@
         align-items: center;
         justify-content: center;
         /* background-color: rgb(255, 244, 179); */
-        background-image: url(paisagem2.jpg);
+        background-image: url(/paisagem2.jpg);
         background-size: cover;
 
         border-left: 1px black solid;
