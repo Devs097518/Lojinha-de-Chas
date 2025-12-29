@@ -3,8 +3,8 @@
     import Contatos from "$lib/Contatos.svelte";
     import { userCode , userInfo} from '$lib/stores/userCode';
 
-    let nome: string = "";
-    let endereco: string = "";
+    let email: string = "";
+    let senha: string = "";
     let resultado: any = {};
 
     let conta: string = "flex";
@@ -29,7 +29,7 @@
     ];
 
     async function criar() {
-        if (nome != "" && endereco != "") {
+        if (email != "" && senha != "") {
             try {
                 const idCriado = Math.random().toString(36).substring(2, 8);
                 const sacola: string[] = [];
@@ -44,8 +44,8 @@
    
                     body: JSON.stringify({
                         identificador: idCriado,
-                        nome,
-                        descricao:endereco,
+                        email,
+                        descricao:senha,
                         sacola: [],
                     }),
                 });
@@ -117,21 +117,21 @@
                 <table>
                     <thead>
                         <tr>
-                            <td>nome</td>
+                            <td>email</td>
                             <td style="padding:0"
                                 ><input
                                     type="text"
-                                    bind:value={nome}
+                                    bind:value={email}
                                     class="inputCriar"
                                 /> <br /></td
                             >
                         </tr>
                         <tr>
-                            <td>endereço</td>
+                            <td>senha</td>
                             <td style="padding:0"
                                 ><input
                                     type="text"
-                                    bind:value={endereco}
+                                    bind:value={senha}
                                     class="inputCriar"
                                 /></td
                             >
@@ -168,11 +168,11 @@
                 <table>
                     <thead>
                         <tr>
-                            <td>nome</td>
-                            <td>{resultado.nome}</td>
+                            <td>email</td>
+                            <td>{resultado.email}</td>
                         </tr>
                         <tr>
-                            <td>endereço</td>
+                            <td>senha</td>
                             <td>{resultado.descricao}</td>
                         </tr>
                         <tr>

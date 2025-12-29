@@ -1,9 +1,14 @@
 import mongoose from 'mongoose';
 
+/*
+obs: o que agora são o email e senha, antes eram nome e descricao
+    |
+*/
+
 const itensSchema = new mongoose.Schema({
     identificador:String,
-    nome:String,
-    descricao:String,
+    email:String,
+    senha:String,
     sacola: [
         {   
             nome:String,

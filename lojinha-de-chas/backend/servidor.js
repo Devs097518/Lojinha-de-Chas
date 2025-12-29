@@ -25,14 +25,6 @@ const conectarAoBD = async () => {
 conectarAoBD();
 
 
-// app.post("/users", async (req, res) => {
-//   const { nome, idade } = req.body; // pega os dados enviados
-//   await client.db("minhaDB").collection("users").insertOne({ nome, idade });
-//   res.json({ message: "Usuário criado com sucesso!" });
-// });
-
-
-
 app.post('/post' , async (req,res) => {
     try{
         const novoItem = await itensSchema.create(req.body)
@@ -43,39 +35,10 @@ app.post('/post' , async (req,res) => {
 });
 
 
-// app.get('/acessar' , async (req,res) => {
-//     try{
-//         const totalItens = await itensSchema.find()
-//         res.json(totalItens)
-
-//     }
-//     catch(error){
-//         console.log('Erro ao usar o read',error)
-//     }
-// });
-
-
 app.get('/acessar/:identificador' , async (req,res) => {
         const totalItens = await itensSchema.findOne({identificador: req.params.identificador});
         totalItens ? res.json(totalItens) : res.status(404).json({error:'Item não encontrado'})
 });
-
-
-
-// app.put('/post/:id' , async (req,res) => {
-//     try{
-//         const atualizar = await itensSchema.findByIdAndUpdate(
-//             req.params.id ,
-//             req.body,
-//             {new:true}
-//         );
-//         res.json(atualizar);
-
-//     }
-//     catch(error){
-//         console.log('Erro ao usar o read',error)
-//     }
-// });
 
 
 
